@@ -32,6 +32,16 @@ export const StyledTab = styled.div<{ isActive: boolean }>`
   padding: 12px 16px;
   width: 100%;
 
+  &:first-child {
+    border-radius: 12px 0 0 12px;
+  }
+
+  &:last-child {
+    border-right: 1px solid
+      ${({ isActive }) => (isActive ? "#003723" : "#9e5500")};
+    border-radius: 0 12px 12px 0;
+  }
+
   ${({ isActive }) => {
     if (isActive) {
       return css`

@@ -2,7 +2,7 @@ import { useCallback } from "react";
 import styled from "styled-components";
 import { useNavigate } from "react-router";
 
-import { StyledTab, Tab as TabComponent } from "./Tab";
+import { Tab as TabComponent } from "./Tab";
 import type { Tab } from "./types";
 
 type Props<T = string> = {
@@ -43,17 +43,6 @@ function Tabs<T = string>({ tabs, value, onChange, isFullWidth }: Props<T>) {
 const Wrapper = styled.div<Pick<Props, "isFullWidth">>`
   display: flex;
   width: ${({ isFullWidth }) => (isFullWidth ? "100%" : "auto")};
-
-  ${StyledTab} {
-    &:first-child {
-      border-radius: 12px 0 0 12px;
-    }
-
-    &:last-child {
-      border-right: 1px solid;
-      border-radius: 0 12px 12px 0;
-    }
-  }
 `;
 
 export default Tabs;
